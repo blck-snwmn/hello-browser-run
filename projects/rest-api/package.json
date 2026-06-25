@@ -1,0 +1,9 @@
+{
+  "name": "@hello-browser-run/rest-api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "html": "node src/html.ts",
+    "url": "node src/url.ts"
+  }
+}

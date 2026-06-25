@@ -1,0 +1,14 @@
+{
+  "name": "hello-browser-run",
+  "private": true,
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "rest:html": "node projects/rest-api/src/html.ts",
+    "rest:url": "node projects/rest-api/src/url.ts"
+  },
+  "workspaces": [
+    "projects/*"
+  ]
+}
