@@ -1,14 +1,27 @@
 {
   "name": "hello-browser-run",
   "private": true,
+  "workspaces": [
+    "projects/*"
+  ],
+  "scripts": {
+    "fmt": "oxfmt --write .",
+    "fmt:check": "oxfmt --check .",
+    "lint": "oxlint --config .oxlintrc.json --deny-warnings .",
+    "lint:fix": "oxlint --config .oxlintrc.json --deny-warnings . --fix",
+    "rest:html": "node projects/rest-api/src/html.ts",
+    "rest:url": "node projects/rest-api/src/url.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "25.0.3",
+    "oxfmt": "0.54.0",
+    "oxlint": "1.69.0",
+    "oxlint-tsgolint": "0.23.0",
+    "typescript": "6.0.3"
+  },
   "engines": {
     "node": ">=23.6.0"
   },
-  "scripts": {
-    "rest:html": "node projects/rest-api/src/html.ts",
-    "rest:url": "node projects/rest-api/src/url.ts"
-  },
-  "workspaces": [
-    "projects/*"
-  ]
+  "packageManager": "pnpm@11.7.0"
 }

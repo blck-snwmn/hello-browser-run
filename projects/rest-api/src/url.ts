@@ -5,7 +5,9 @@ const accountId: string | undefined = process.env.CLOUDFLARE_ACCOUNT_ID;
 const apiToken: string | undefined = process.env.CLOUDFLARE_API_TOKEN;
 const mode: string | undefined = process.argv.find((value, index) => index === 2 && value !== "--");
 const url: string | undefined = process.argv.find((value, index) => index === 3 && value !== "--");
-const outputPath: string | undefined = process.argv.find((value, index) => index === 4 && value !== "--");
+const outputPath: string | undefined = process.argv.find(
+  (value, index) => index === 4 && value !== "--",
+);
 
 if (!mode) {
   throw new Error("mode is required: ss, md, or pdf");
@@ -54,7 +56,7 @@ if (!response.ok) {
 await mkdir(dirname(outputPath), { recursive: true });
 
 if (mode === "md") {
-  const json = await response.json();
+  const json = (await response.json()) as { result: string };
   await writeFile(outputPath, json.result);
 } else {
   await writeFile(outputPath, Buffer.from(await response.arrayBuffer()));
