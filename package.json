@@ -13,7 +13,7 @@
     "rest:url": "node projects/rest-api/src/url.ts"
   },
   "devDependencies": {
-    "@types/node": "25.0.3",
+    "@types/node": "25.0.10",
     "oxfmt": "0.54.0",
     "oxlint": "1.75.0",
     "oxlint-tsgolint": "7.0.2001",
