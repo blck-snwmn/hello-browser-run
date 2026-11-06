@@ -22,7 +22,7 @@
   "devEngines": {
     "runtime": {
       "name": "node",
-      "version": "25"
+      "version": "v25.9.0"
     }
   },
   "engines": {
